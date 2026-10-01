@@ -1,0 +1,130 @@
+﻿@using HanBase.Constants
+@using HanBase.Extensions
+
+@{
+    ViewData["Title"] = "Charts";
+}
+
+<div class="charts-container">
+    <h4>Korean Hangul</h4>
+
+    <div class="glyphs-body korean">
+        @{
+            var glyphNumber = 0;
+            var hangulSounds = Charts.GetHangulSound();
+        }
+
+        @foreach (var glyph in Charts.GetHangul())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(hangulSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+
+    <h4 class="mt-4">Japanese Hiragana</h4>
+
+    <div class="glyphs-body japanese">
+        @{
+            glyphNumber = 0;
+            var hiraganaSounds = Charts.GetHiraganaSound();
+        }
+
+        @foreach (var glyph in Charts.GetHiragana())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(hiraganaSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+
+    <div class="glyphs-body japanese-ext">
+        @{
+            glyphNumber = 0;
+            var hiraganaExtSounds = Charts.GetHiraganaExtSound();
+        }
+
+        @foreach (var glyph in Charts.GetHiraganaExt())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(hiraganaExtSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+
+    <h4 class="mt-4">Japanese Katakana</h4>
+
+    <div class="glyphs-body japanese">
+        @{
+            glyphNumber = 0;
+            var katakanaSounds = Charts.GetKatakanaSound();
+        }
+
+        @foreach (var glyph in Charts.GetKatakana())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(katakanaSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+
+    <div class="glyphs-body japanese-ext">
+        @{
+            glyphNumber = 0;
+            var katakanaExtSounds = Charts.GetKatakanaExtSound();
+        }
+
+        @foreach (var glyph in Charts.GetKatakanaExt())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(katakanaExtSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+
+    <h4 class="mt-4">Chinese Bopomofo (Zhuyin Fuhao)</h4>
+
+    <div class="glyphs-body chinese">
+        @{
+            glyphNumber = 0;
+            var bopomofoSounds = Charts.GetBopomofoSound();
+        }
+
+        @foreach (var glyph in Charts.GetBopomofo())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(bopomofoSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+
+    <h4 class="mt-4">Chinese Suzhou Numerals</h4>
+
+    <div class="glyphs-body suzhou">
+        @{
+            glyphNumber = 0;
+            var suzhouSounds = Charts.GetSuzhouSound();
+        }
+
+        @foreach (var glyph in Charts.GetSuzhou())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(suzhouSounds[glyphNumber++])</div>
+            </div>
+
+        }
+    </div>
+</div>

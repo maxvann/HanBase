@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HanBase", "HanBase.csproj", "{F3A3395C-CA6F-40C2-AD3E-B51DC8311F77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3A3395C-CA6F-40C2-AD3E-B51DC8311F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A3395C-CA6F-40C2-AD3E-B51DC8311F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A3395C-CA6F-40C2-AD3E-B51DC8311F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A3395C-CA6F-40C2-AD3E-B51DC8311F77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EF75AC2-3875-46AE-B854-4C21C2053EF2}
+	EndGlobalSection
+EndGlobal

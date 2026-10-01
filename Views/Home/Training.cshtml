@@ -1,0 +1,279 @@
+﻿@using HanBase.Constants
+@using HanBase.Extensions
+
+@model HanBase.ViewModels.TrainingViewModel
+
+@{
+    ViewData["Title"] = "Training";
+}
+
+<h2>Training</h2>
+
+<div class="row">
+    <div class="col-3 text-start"></div>
+    <div class="col-6">
+        <form class="search-container" asp-controller="Home" asp-action="Training" method="post">
+            <strong class="me-2">Language</strong>
+            <select class="form-control criteria-box me-2" asp-for="@Model.LanguageId" asp-items="Model.Languages"></select>
+            <button class="search" type="submit" x-on:click="pageJump = 1; setJump();">
+                <div class="pagination-icon-container">
+                    <div class="icon search"></div>
+                </div>
+            </button>
+        </form>
+    </div>
+    <div class="col-3 text-end">
+        <a class="button-fill" x-on:click="showDetailsSlider = !showDetailsSlider">Details</a>
+    </div>
+</div>
+
+<div class="pagination">
+    @if (Model.Characters != null)
+    {
+        <div class="pagination-control">
+            <strong>Count:&nbsp;@Model.TotalCharacters</strong>
+        </div>
+        <div>
+            <div class="radical-stroke-container">
+                <input id="total_pages_holder" type="hidden" value="@(Model.TotalPages)" />
+                <a class="button-fill me-2" x-on:click="pageJump > 1 ? pageJump-- : 1; setJump();">
+                    <div class="icon caret-down-fill"></div>
+                </a>
+                <a class="button-hollow" x-on:click="pageJump = 1; setJump();" x-on:dblclick="pageJump = document.getElementById('total_pages_holder').value; setJump();">
+                    <div class="stroke-count" x-text="pageJump"></div>
+                </a>
+                <a class="button-fill ms-2" x-on:click="pageJump < document.getElementById('total_pages_holder').value ? pageJump++ : document.getElementById('total_pages_holder').value; setJump();">
+                    <div class="icon caret-up-fill"></div>
+                </a>
+                <form asp-controller="Home" asp-action="Jump" method="get">
+                    <button class="button-fill ms-2" type="submit">
+                        <div class="icon search no-margin"></div>
+                    </button>
+                </form>
+                <a class="button-hollow ms-2" x-show="showExport" x-on:click="exportPage();">
+                    <div class="icon filetype-html no-margin"></div>
+                </a>
+                <div class="button-hollow ms-2" x-show="!showExport" x-cloak>
+                    <div class="spinner-border override text-secondary no-margin" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-control">
+            @if (Model.HasPreviousPage)
+            {
+                <div class="ml-2 mr-2">
+                    <a asp-controller="Home" asp-action="TrainingPager"
+                       asp-route-language="@(Model.LanguageId)"
+                       asp-route-page="@(Model.PageIndex - 1)"
+                       method="get">
+                        <div class="pagination-icon-container">
+                            <div class="icon skip-backward-fill"></div>
+                        </div>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="pagination-icon-container ml-2 mr-2">
+                    <div class="icon skip-backward-fill-muted"></div>
+                </div>
+            }
+            <div><strong>Page @(Model.PageIndex) of @(Model.TotalPages)</strong></div>
+            @if (Model.HasNextPage)
+            {
+                <div class="ml-2">
+                    <a asp-controller="Home" asp-action="TrainingPager"
+                       asp-route-language="@(Model.LanguageId)"
+                       asp-route-page="@(Model.PageIndex + 1)"
+                       method="get">
+                        <div class="pagination-icon-container">
+                            <div class="icon skip-forward-fill"></div>
+                        </div>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="pagination-icon-container ml-2">
+                    <div class="icon skip-forward-fill-muted"></div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@if (Model.Characters != null && Model.Characters.Length > 0)
+{
+    <div class="radicals-body footer">
+        @{
+            var characterNumber = Model.CharacterNumber;
+        }
+
+        @foreach (var unicode in Model.Characters)
+        {
+            <a asp-controller="Home" asp-action="TrainingDetails"
+               asp-route-unicode="@(unicode)"
+               asp-route-position="@(characterNumber)"
+               method="get"
+               x-on:click="showDetailsSlider = !showDetailsSlider">
+                <div class="radical-container radical">
+                    <div class="radical-small">@(characterNumber++)</div>
+                    <div>@unicode.ToUnicode()</div>
+                </div>
+            </a>
+        }
+    </div>
+}
+else
+{
+    <div class="detail-ideogram medium mt-4">
+        No Characters Found
+    </div>
+}
+
+@* BEGIN - Details slider *@
+<div :class="[ 'details-slider-backdrop', showDetailsSlider ? 'visible' : '' ]" x-cloak x-on:click="showDetailsSlider = !showDetailsSlider">
+</div>
+<aside :class="[ 'details-slider', showDetailsSlider ? 'open' : '' ]" x-cloak>
+    <div class="details-head">
+        <div>
+            <h2>Details</h2>
+        </div>
+        <a class="button-hollow" x-on:click="showDetailsSlider = !showDetailsSlider">X</a>
+    </div>
+    <div class="detail-ideogram">
+        @if (Model != null && Model.Character != null)
+        {
+            <div class="ideogram-container">
+                <div class="detail-ideogram large mt-2 me-4">@(Model.Character.Ideogram)</div>
+                <div class="detail-ideogram large mt-2 seal-font" x-show="showSealIdeogram" x-cloak>@(Model.Character.Ideogram)</div>
+            </div>
+            <div class="ideogram-container">
+                <div class="pagination-icon-container pointer me-2" x-on:click="showSealIdeogram = !showSealIdeogram">
+                    <div class="icon intersect"></div>
+                </div>
+                <div class="detail-ideogram medium">(@(Model.Character.PositionNumber)) @(Model.Character.Unicode)</div>
+            </div>
+        }
+        else
+        {
+            <div class="detail-ideogram medium mt-4">No Character Found</div>
+        }
+    </div>
+    <div>
+        @if (Model != null && Model.Readings != null)
+        {
+            <dl class="row text-start">
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.EnglishDefinition)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium">
+                    @Html.DisplayFor(model => model.Readings!.EnglishDefinition)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.MandarinPinYin)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium">
+                    @Html.DisplayFor(model => model.Readings!.MandarinPinYin)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.CantoneseJyutPing)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium">
+                    @Html.DisplayFor(model => model.Readings!.CantoneseJyutPing)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.JapaneseON)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium">
+                    @Html.DisplayFor(model => model.Readings!.JapaneseON)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.JapaneseKun)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium">
+                    @Html.DisplayFor(model => model.Readings!.JapaneseKun)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.KoreanYale)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium">
+                    @Html.DisplayFor(model => model.Readings!.KoreanYale)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.KoreanHangul)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium font">
+                    @Html.DisplayFor(model => model.Readings!.KoreanHangul)
+                </dd>
+                <dt class="col-sm-6">
+                    <strong>@Html.DisplayNameFor(model => model.Readings!.KoreanHangulHun)</strong>
+                </dt>
+                <dd class="col-sm-6 detail-ideogram-medium font">
+                    @Html.DisplayFor(model => model.Readings!.KoreanHangulHun)
+                </dd>
+                @if (Model.Numeric != null)
+                {
+                    <dt class="col-sm-6">
+                        <strong>@Html.DisplayNameFor(model => model.Numeric!.Numeric)</strong>
+                    </dt>
+                    <dd class="col-sm-6 detail-ideogram-medium">
+                        @Html.DisplayFor(model => model.Numeric!.Numeric)
+                    </dd>
+                }
+            </dl>
+        }
+    </div>
+    <div>
+        @if (Model != null && Model.CharacterRadicals != null)
+        {
+            <h5>Radicals</h5>
+            @foreach (var item in Model.CharacterRadicals)
+            {
+                <div class="detail-radical">
+                    <div class="detail-ideogram-medium font me-4">@(item.Ideogram)</div>
+                    <div class="detail-ideogram-medium me-4"><strong>@(item.Unicode)</strong></div>
+                    <div class="detail-ideogram-medium">@(item.TranslatedReading)</div>
+                </div>
+            }
+        }
+    </div>
+    <div>
+        @if (Model != null && Model.CharacterVariants != null)
+        {
+            <h5>Variants</h5>
+            @foreach (var item in Model.CharacterVariants)
+            {
+                <div class="detail-radical">
+                    <div class="detail-ideogram-medium font me-4">@(item.Ideogram)</div>
+                    <div class="detail-ideogram-medium me-4"><strong>@(item.Unicode)</strong></div>
+                    <div class="detail-ideogram-medium me-4">@(item.TranslatedReading)</div>
+                    @switch (item.VariantType)
+                    {
+                        case "kSemanticVariant":
+                            <div class="detail-ideogram-medium"><em>Semantic</em></div>
+                            break;
+                        case "kSimplifiedVariant":
+                            <div class="detail-ideogram-medium"><em>Simplified</em></div>
+                            break;
+                        case "kSpecializedSemanticVariant":
+                            <div class="detail-ideogram-medium"><em>Specialized</em></div>
+                            break;
+                        case "kTraditionalVariant":
+                            <div class="detail-ideogram-medium"><em>Traditional</em></div>
+                            break;
+                        case "kZVariant":
+                            <div class="detail-ideogram-medium"><em>Simplified</em></div>
+                            break;
+                        default:
+                            <div class="detail-ideogram-medium"><em>Unknown</em></div>
+                            break;
+                    }
+                </div>
+            }
+        }
+    </div>
+</aside>
+@* END - Details slider *@

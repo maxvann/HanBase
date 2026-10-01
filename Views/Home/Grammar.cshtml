@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Grammar";
+}
+
+<h2>Grammar</h2>
+
+<div class="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button grammar-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                Chinese Tonal System
+            </button>
+        </h2>
+        <div id="collapse-1" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+                <partial name="_ChineseTonesPartial" />
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                Nouns
+            </button>
+        </h2>
+        <div id="collapse-2" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                Adjectives
+            </button>
+        </h2>
+        <div id="collapse-3" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                Verbs
+            </button>
+        </h2>
+        <div id="collapse-4" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <h4 class="section-header" x-on:click="showVerbsPresent = !showVerbsPresent">
+                    Present Tense
+                    <span class="icon caret-down-fill" x-show="showVerbsPresent"></span>
+                    <span class="icon caret-up-fill" x-show="!showVerbsPresent" x-cloak></span>
+                </h4>
+                <div x-show="showVerbsPresent" x-transition>
+                    <partial name="_PresentSimpleActivePartial" />
+                    <partial name="_PresentSimplePassivePartial" />
+                    <partial name="_PresentProgressiveActivePartial" />
+                    <partial name="_PresentProgressivePassivePartial" />
+                    <partial name="_PresentPerfectActivePartial" />
+                    <partial name="_PresentPerfectPassivePartial" />
+                    <partial name="_PresentPerfectProgressiveActive" />
+                    <partial name="_PresentPerfectProgressivePassive" />
+                </div>
+                <h4 class="section-header mt-4" x-on:click="showVerbsPast = !showVerbsPast">
+                    Past Tense
+                    <span class="icon caret-down-fill" x-show="showVerbsPast"></span>
+                    <span class="icon caret-up-fill" x-show="!showVerbsPast" x-cloak></span>
+                </h4>
+                <div x-show="showVerbsPast" x-transition>
+                    <partial name="_PastSimpleActivePartial" />
+                    <partial name="_PastSimplePassivePartial" />
+                    <partial name="_PastProgressiveActivePartial" />
+                    <partial name="_PastProgressivePassivePartial" />
+                </div>
+                <h4 class="section-header mt-4" x-on:click="showVerbsFuture = !showVerbsFuture">
+                    Future Tense
+                    <span class="icon caret-down-fill" x-show="showVerbsFuture"></span>
+                    <span class="icon caret-up-fill" x-show="!showVerbsFuture" x-cloak></span>
+                </h4>
+                <div x-show="showVerbsFuture" x-transition>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

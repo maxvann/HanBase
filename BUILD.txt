@@ -1,0 +1,128 @@
+1. Build and publish the project (at the solution level)
+
+    dotnet publish --output dist
+
+2. Deploy the project
+
+    Copy the distribution to the "C:\inetpub\wwwroot\hanbase\" folder
+
+3. Create a database folder at
+
+    "C:\inetpub\wwwroot\hanbasedb\"
+
+4. Copy the database to the database folder
+
+    HanBase_data.mdf
+    HanBase_data_log.ldf
+
+5. Update the settings file (appsettings.json) to the path of the database and the URL and port number
+
+    "Urls": "https://localhost:5556",
+    "AllowedHosts": "*",
+    "ConnectionStrings": {
+        "HanBaseContext": "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\inetpub\\wwwroot\\hanbasedb\\HanBase_data.mdf;Integrated Security=True"
+    }
+
+Note: In the following commands, a space between the properties (prop= setting) is required.
+
+6. Create the Windows service
+
+    sc create HanBaseService binPath= "C:\inetpub\wwwroot\hanbase\HanBase.exe"
+
+7. Set the Windows service startup type
+
+    sc config HanBaseService start= auto
+
+8. Modify the RegEdit entry
+
+    RegEdit: Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HanBaseService
+
+9. Modify the Image Path to add double quotes in RegEdit (only needed if there are spaces in the path)
+
+    ImagePath: "C:\inetpub\wwwroot\hanbase\HanBase.exe"
+
+10. Change the login account for the Windows service
+
+    Service Control Manager applet | double click HanBaseService | Log On | This Account | Browse... | select User & Password
+
+    Running under: .\max24 or VIPER\max24
+
+    Password: Boa...03
+
+11. Execute the various Windows service commands
+
+    sc start HanBaseService
+
+    sc query HanBaseService
+
+    sc stop HanBaseService
+
+    sc delete HanBaseService
+
+12. Review the system EventViewer applet
+
+13. Navigate to: https://localhost:5555
+
+14. Reverse Proxy several duplicates of the ASP.NET Core app (on different ports) via Apache or YARP with load balancing
+
+15. Configure Apache as a Reverse Proxy
+
+    a. Uncomment the following lines in "httpd.conf"
+
+        LoadModule headers_module modules/mod_headers.so
+
+        LoadModule proxy_module modules/mod_proxy.so
+
+        LoadModule proxy_http_module modules/mod_proxy_http.so
+
+    b. Add the following to "httpd-vhosts.conf"
+
+        Listen 9996
+
+        <VirtualHost *:9996>
+            RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+            ServerName localhost
+            ProxyPreserveHost On
+            ProxyPass / https://localhost:5555/
+            ProxyPassReverse / https://localhost:5555/
+        </VirtualHost>
+
+16. Restart the Apache service
+
+    httpd -k restart
+
+17. Navigate to: https://localhost:9996
+
+18. Configure Apache as a load balancer
+
+    a. Uncomment the following lines in "httpd.conf"
+
+        LoadModule lbmethod_byrequests_module modules/mod_lbmethod_byrequests.so
+
+        LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
+
+    b. Add the following to "httpd-vhosts.conf"
+
+        Listen 9996
+
+        <VirtualHost *:9996>
+            RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+
+            ProxyPass / balancer://mycluster/
+
+            ProxyPassReverse / https://127.0.0.1:5555/
+            ProxyPassReverse / https://127.0.0.1:5556/
+
+            <Proxy balancer://mycluster>
+                BalancerMember https://127.0.0.1:5555
+                BalancerMember https://127.0.0.1:5556 
+                ProxySet lbmethod=byrequests
+            </Proxy>
+
+            <Location />
+                SetHandler balancer
+            </Location>
+
+            ServerName localhost
+        </VirtualHost>
+
