@@ -15,6 +15,14 @@
     HanBase_data.mdf
     HanBase_data_log.ldf
 
+    To attach locally via Visual Studio 2022, execute the following command,
+
+    CREATE DATABASE [HanBaseWeb]
+    ON (FILENAME = N'C:\Projects\HANBASE\Source\HanBase_data.mdf'),
+        (FILENAME = N'C:\Projects\HANBASE\Source\HanBase_data_log.ldf')
+    FOR ATTACH;
+    GO
+
 5. Update the settings file (appsettings.json) to the path of the database and the URL and port number
 
     "Urls": "https://localhost:5556",
