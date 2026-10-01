@@ -39,3 +39,11 @@ Grammar section for learning the four main oriental languages side-by-side — l
 Training section for learning the Chinese characters based on the official government educational lists in China, Korea and Japan
 
 Export the training lists in a convenient HTML format for rapid and easy access
+
+<img width="1886" height="904" alt="Screenshot 2026-10-01 174207" src="https://github.com/user-attachments/assets/8b49864a-bc11-4460-a481-4b67dffe643f" />
+
+<img width="1637" height="912" alt="Screenshot 2026-10-01 174051" src="https://github.com/user-attachments/assets/655975be-63bd-4a1f-a882-0d7c81a5612d" />
+
+<img width="1912" height="911" alt="Screenshot 2026-10-01 174114" src="https://github.com/user-attachments/assets/c4a988c5-5d2b-411c-8227-3fbde8d4e951" />
+
+<img width="1915" height="913" alt="Screenshot 2026-10-01 174129" src="https://github.com/user-attachments/assets/59f52ba1-8cf6-48de-b41b-174a0ac7345a" />
