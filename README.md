@@ -19,3 +19,21 @@ Community and Tools: The unicode-org/unihan-database GitHub repository is used f
 Various third-party tools, such as unihan-etl (for exporting to CSV/JSON), libUnihan (a normalized SQLite library), and Unicode::Unihan (Perl module), facilitate programmatic access and integration.
 
 HanBase is a Web app interface onto the Unihan database written as a standalone Web service (Kestrel) Windows Service, written in C# .NET core Razor Pages using Visual Studio 2022.
+
+Features
+
+One stop shop language learning resource for Mandarin, Cantonese, Japanese and Korean (CJK languages)
+
+Search for Chinese characters (Ideograms) by criteria - English, PinYin, JyutPing, Yale, Unicode Code Point, et al.
+
+Search for Chinese characters by Radical and Stroke Count
+
+Review a Chinese character — English meaning, Mandarin, Cantonese, Japanese and Korean readings
+
+Review a Chinese character — ideogram, ancient ideogram if one exists, Korean Hangul, variants, radicals
+
+View charts — Korean Hangul, Japanese Hiragana and Katakana, Chinese Bopomofo (Zhuyin Fuhao), Suzhou numerals
+
+Grammar section for learning the four main oriental languages side-by-side — learn to read, write and speak the CJK languages
+
+Training section for learning the Chinese characters based on the official government educational lists in China, Korea and Japan
