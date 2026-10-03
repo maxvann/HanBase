@@ -22,9 +22,12 @@
 
 @font-face {
     font-family: 'SealFont';
-    font-style: normal;
-    font-weight: normal;
     src: url('/fnt/fang_zheng_xiao_zhuan_ti.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ScriptFont';
+    src: url('/fnt/fang_zheng_su_xin_shi_liu_kai.ttf') format('truetype');
 }
 
 body {
@@ -355,6 +358,10 @@ table {
         background-image: url('/img/intersect.svg');
     }
 
+    .icon.intersect2 {
+        background-image: url('/img/intersect2.svg');
+    }
+
     .icon.search {
         background-image: url('/img/search.svg');
     }
@@ -534,6 +541,11 @@ table {
 .seal-font {
     color: var(--seal);
     font-family: 'SealFont';
+}
+
+.script-font {
+    color: var(--highlight);
+    font-family: 'ScriptFont';
 }
 
 .search {
