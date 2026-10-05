@@ -109,20 +109,13 @@ public class ReadingRepository : IReadingRepository
     {
         var viewModel = LoadReadingViewModel();
 
-        var characters = viewModel.Characters ?? [];
-
-        if (viewModel.RadicalNumber != radicalNumber)
-        {
-            characters = await _characterDetails.GetCharacters(radicalNumber, viewModel.StrokeCount);
-            viewModel.Characters = characters;
-            viewModel.RadicalNumber = radicalNumber;
-        }
-
+        viewModel.Characters = await _characterDetails.GetCharacters(radicalNumber, viewModel.StrokeCount);
+        viewModel.RadicalNumber = radicalNumber;
         viewModel.CriteriaId = 0;
         viewModel.Search = string.Empty;
 
         viewModel.PaginatedCharacters = PaginatedList<CharacterDefinition>.Create(
-            characters ?? [],
+            viewModel.Characters ?? [],
             1,
             Pages.ReadingsPageSize);
 
