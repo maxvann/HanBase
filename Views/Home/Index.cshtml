@@ -35,6 +35,11 @@
     {
         <div class="pagination-control">
             <strong>Count:&nbsp;@Model.Characters.Count</strong>
+            @if (Model.RadicalNumber > 0)
+            {
+                <strong class="ms-2">Radical:&nbsp;@Model.RadicalNumber</strong>
+                <strong class="ms-2">Strokes:&nbsp;@Model.StrokeCount</strong>
+            }
         </div>
         <div class="pagination-control">
             @if (Model.PaginatedCharacters.HasPreviousPage)
