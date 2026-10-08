@@ -48,8 +48,11 @@ public class CharacterDetails : ICharacterDetails
             VariantType = string.Empty,
             TranslatedReading = string.Empty,
             RadicalNumber = radical.RadicalNumber,
-            StrokeCount = radical.StrokeCount
+            StrokeCount = radical.StrokeCount,
+            IsInMap = false
         };
+
+        character.IsInMap = await IsUnicodeInMap(character.Unicode);
 
         return character;
     }
@@ -415,6 +418,29 @@ public class CharacterDetails : ICharacterDetails
 
         return readings;
 
+    }
+
+    #endregion
+
+    #region "Private Methods"
+
+    /// <summary>
+    /// Search for a Unicode code point entry in the Seal Font map.
+    /// </summary>
+    /// <param name="unicode">Unicode "U+XXXX" codepoint.</param>
+    /// <returns>Whether the unicode has been found or not.</returns>
+    private async Task<bool> IsUnicodeInMap(string unicode)
+    {
+        var map = await _context.SealFonts
+                    .Where(x => x.Unicode.Equals(unicode))
+                    .FirstOrDefaultAsync();
+
+        if (map == null || map.Unicode == string.Empty)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     #endregion

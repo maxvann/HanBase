@@ -46,6 +46,7 @@ public class ReadingRepository : IReadingRepository
         {
             viewModel.Character.RadicalNumber = character.RadicalNumber;
             viewModel.Character.StrokeCount = character.StrokeCount;
+            viewModel.Character.IsInMap = character.IsInMap;
         }
 
         viewModel.Readings = await _characterDetails.GetReadings(unicode);

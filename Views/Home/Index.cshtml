@@ -197,15 +197,21 @@ else
             <div class="ideogram-container">
                 <div class="detail-ideogram large mt-2 me-4">@(Model.Character.Ideogram)</div>
                 <div class="detail-ideogram large mt-2 script-font me-4" x-show="showScriptIdeogram" x-cloak>@(Model.Character.Ideogram)</div>
-                <div class="detail-ideogram large mt-2 seal-font" x-show="showSealIdeogram" x-cloak>@(Model.Character.Ideogram)</div>
+                @if (Model.Character.IsInMap)
+                {
+                    <div class="detail-ideogram large mt-2 seal-font" x-show="showSealIdeogram" x-cloak>@(Model.Character.Ideogram)</div>
+                }
             </div>
             <div class="ideogram-container">
                 <div class="pagination-icon-container pointer me-2" x-on:click="showScriptIdeogram = !showScriptIdeogram">
                     <div class="icon intersect2"></div>
                 </div>
-                <div class="pagination-icon-container pointer me-2" x-on:click="showSealIdeogram = !showSealIdeogram">
-                    <div class="icon intersect"></div>
-                </div>
+                @if (Model.Character.IsInMap)
+                {
+                    <div class="pagination-icon-container pointer me-2" x-on:click="showSealIdeogram = !showSealIdeogram">
+                        <div class="icon intersect"></div>
+                    </div>
+                }
                 <div class="detail-ideogram medium">@(Model.Character.Unicode)</div>
             </div>
         }

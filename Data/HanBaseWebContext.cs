@@ -21,4 +21,6 @@ public class HanBaseContext : DbContext
     public DbSet<TrainingCharacter> TrainingCharacters { get; set; } = default!;
 
     public DbSet<Variant> Variants { get; set; } = default!;
+
+    public DbSet<SealFontMap> SealFonts { get; set; } = default!;
 }

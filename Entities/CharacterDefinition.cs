@@ -24,6 +24,9 @@ public class CharacterDefinition
 
     [Display(Name = "Position Number")]
     public int PositionNumber { get; set; } = 0;
+
+    [Display(Name = "Is In Map")]
+    public bool IsInMap { get; set; } = false;
 }
 /*
 
