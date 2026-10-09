@@ -48,11 +48,11 @@ public class CharacterDetails : ICharacterDetails
             VariantType = string.Empty,
             TranslatedReading = string.Empty,
             RadicalNumber = radical.RadicalNumber,
-            StrokeCount = radical.StrokeCount,
-            IsInMap = false
+            StrokeCount = radical.StrokeCount
         };
 
-        character.IsInMap = await IsUnicodeInMap(character.Unicode);
+        character.IsMappedBrush = await IsMappedFontBrush(character.Unicode);
+        character.IsMappedSeal = await IsMappedFontSeal(character.Unicode);
 
         return character;
     }
@@ -425,17 +425,36 @@ public class CharacterDetails : ICharacterDetails
     #region "Private Methods"
 
     /// <summary>
+    /// Search for a Unicode code point entry in the Brush Font map.
+    /// </summary>
+    /// <param name="unicode">Unicode "U+XXXX" codepoint.</param>
+    /// <returns>Whether the unicode has been found or not.</returns>
+    private async Task<bool> IsMappedFontBrush(string unicode)
+    {
+        var map = await _context.BrushFonts
+                    .Where(x => x.Unicode.Equals(unicode))
+                    .FirstOrDefaultAsync();
+
+        if (map == null)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
     /// Search for a Unicode code point entry in the Seal Font map.
     /// </summary>
     /// <param name="unicode">Unicode "U+XXXX" codepoint.</param>
     /// <returns>Whether the unicode has been found or not.</returns>
-    private async Task<bool> IsUnicodeInMap(string unicode)
+    private async Task<bool> IsMappedFontSeal(string unicode)
     {
         var map = await _context.SealFonts
                     .Where(x => x.Unicode.Equals(unicode))
                     .FirstOrDefaultAsync();
 
-        if (map == null || map.Unicode == string.Empty)
+        if (map == null)
         {
             return false;
         }

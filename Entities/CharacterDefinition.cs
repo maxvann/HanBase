@@ -25,8 +25,11 @@ public class CharacterDefinition
     [Display(Name = "Position Number")]
     public int PositionNumber { get; set; } = 0;
 
-    [Display(Name = "Is In Map")]
-    public bool IsInMap { get; set; } = false;
+    [Display(Name = "Is Mapped Brush")]
+    public bool IsMappedBrush { get; set; } = false;
+
+    [Display(Name = "Is Mapped Seal")]
+    public bool IsMappedSeal { get; set; } = false;
 }
 /*
 

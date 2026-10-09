@@ -22,5 +22,7 @@ public class HanBaseContext : DbContext
 
     public DbSet<Variant> Variants { get; set; } = default!;
 
-    public DbSet<SealFontMap> SealFonts { get; set; } = default!;
+    public DbSet<MappedFontBrush> BrushFonts { get; set; } = default!;
+
+    public DbSet<MappedFontSeal> SealFonts { get; set; } = default!;
 }
