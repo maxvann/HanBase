@@ -284,6 +284,28 @@ table {
     color: var(--cream) !important;
 }
 
+.grammar-cell {
+    border-bottom: 1px solid var(--gold);
+    padding-top: 0.5rem;
+    min-height: 6rem;
+}
+
+    .grammar-cell.bottom {
+        border-bottom: 1px solid var(--gold);
+    }
+
+    .grammar-cell.left {
+        border-left: 1px solid var(--gold);
+    }
+
+    .grammar-cell.right {
+        border-right: 1px solid var(--gold);
+    }
+
+    .grammar-cell.top {
+        border-top: 1px solid var(--gold);
+    }
+
 .grammar-container {
     padding-top: 1rem;
 }
