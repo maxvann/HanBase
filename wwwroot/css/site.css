@@ -285,26 +285,11 @@ table {
 }
 
 .grammar-cell {
-    border-bottom: 1px solid var(--gold);
-    padding-top: 0.5rem;
+    border: 1px solid var(--gold);
     min-height: 6rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
 }
-
-    .grammar-cell.bottom {
-        border-bottom: 1px solid var(--gold);
-    }
-
-    .grammar-cell.left {
-        border-left: 1px solid var(--gold);
-    }
-
-    .grammar-cell.right {
-        border-right: 1px solid var(--gold);
-    }
-
-    .grammar-cell.top {
-        border-top: 1px solid var(--gold);
-    }
 
 .grammar-container {
     padding-top: 1rem;
