@@ -61,22 +61,37 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-                Adjectives
+                Pronouns
             </button>
         </h2>
         <div id="collapse-3" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <h4>Personal Pronouns</h4>
+                <partial name="_PronounsPersonalPartial" />
+                <h4 class="mt-4">Possessive Pronouns</h4>
+                <partial name="_PronounsPossessivePartial" />
             </div>
         </div>
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-                Verbs
+                Adjectives
             </button>
         </h2>
         <div id="collapse-4" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <strong>This is the fourth item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                Verbs
+            </button>
+        </h2>
+        <div id="collapse-5" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <h4 class="section-header" x-on:click="showVerbsPresent = !showVerbsPresent">
                     Present Tense

@@ -549,6 +549,10 @@ table {
         visibility: visible;
     }
 
+.row-separator {
+    border-bottom: 1px solid var(--gold);
+}
+
 .seal-font {
     color: var(--seal);
     font-family: 'SealFont';
