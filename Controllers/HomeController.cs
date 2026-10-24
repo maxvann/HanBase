@@ -138,6 +138,17 @@ public class HomeController : Controller
         return await _trainingRepository.ExportPage();
     }
 
+    // GET: Home/TransformText
+    public string TransformText(string? text)
+    {
+        if (text == null)
+        {
+            return string.Empty;
+        }
+
+        return _readingRepository.TransformText(text);
+    }
+
     // GET: Home/Error
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

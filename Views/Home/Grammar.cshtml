@@ -15,6 +15,15 @@
             <div class="accordion-body">
                 <partial name="_ChineseTonesPartial" />
             </div>
+            <div class="transform-container">
+                <div class="me-2"><strong>JyutPing to Yale</strong></div>
+                <input class="search-box me-2" type="text" name="search" x-model="transform" placeholder="e.g. ngo5 ji5 ging1 -- ngóℏ yíℏ gìng" />
+                <button class="search" type="button" x-on:click="transformText();">
+                    <div class="transform-icon-container">
+                        <div class="icon search"></div>
+                    </div>
+                </button>
+            </div>
         </div>
     </div>
     <div class="accordion-item">

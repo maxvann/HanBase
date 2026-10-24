@@ -35,6 +35,11 @@
                 this.showExport = true;
                 newWin.location.href = '/docs/' + this.path;
             }
+        },
+        transform: $persist('').using(sessionStorage),
+        async transformText() {
+            const response = await fetch(`/Home/TransformText?text=${this.transform}`);
+            this.transform = await response.text();
         }
     }">
     <header class="header-main">

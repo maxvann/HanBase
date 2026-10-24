@@ -420,6 +420,11 @@ public class CharacterDetails : ICharacterDetails
 
     }
 
+    public string TransformText(string text)
+    {
+        return Transform.CantoneseJyutPingToYale(text);
+    }
+
     #endregion
 
     #region "Private Methods"

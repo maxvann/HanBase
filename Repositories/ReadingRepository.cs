@@ -2,6 +2,7 @@
 using HanBase.Entities;
 using HanBase.Interfaces;
 using HanBase.ViewModels;
+using Microsoft.CodeAnalysis.Elfie.Model.Strings;
 
 namespace HanBase.Repositories;
 
@@ -122,6 +123,11 @@ public class ReadingRepository : IReadingRepository
             Pages.ReadingsPageSize);
 
         return viewModel;
+    }
+
+    public string TransformText(string text)
+    {
+        return _characterDetails.TransformText(text);
     }
 
     #endregion

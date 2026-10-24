@@ -11,4 +11,6 @@ public interface IReadingRepository
     Task<ReadingViewModel> GetCharactersByCriteria(int criteriaId, string search, int page);
 
     Task<ReadingViewModel> GetCharactersByRadical(int radicalNumber);
+
+    string TransformText(string text);
 }

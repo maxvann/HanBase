@@ -617,6 +617,20 @@ table {
     width: 5rem;
 }
 
+.transform-container {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.transform-icon-container {
+    background-color: #ffffff;
+}
+
 @media(max-width:850px) {
     html {
         font-size: 16px;

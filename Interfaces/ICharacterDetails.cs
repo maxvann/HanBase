@@ -34,4 +34,6 @@ public interface ICharacterDetails
     Task<List<CharacterDefinition>> SearchCharacters(SearchCriteria criteria, string search);
 
     CharacterReadings? TransformReadings(CharacterReadings? readings);
+
+    string TransformText(string text);
 }
