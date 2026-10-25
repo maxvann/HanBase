@@ -17,7 +17,7 @@
             </div>
             <div class="transform-container">
                 <div class="me-2"><strong>JyutPing to Yale</strong></div>
-                <input class="search-box me-2" type="text" name="search" x-model="transform" placeholder="e.g. ngo5 ji5 ging1 -- ngóℏ yíℏ gìng" />
+                <input class="search-box me-2" type="text" name="search" x-model="transform" placeholder="e.g. ngo5 ji5 ging1 => ngóℏ yíℏ gìng" />
                 <button class="search" type="button" x-on:click="transformText();">
                     <div class="transform-icon-container">
                         <div class="icon search"></div>
@@ -109,10 +109,34 @@
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
-                Verbs
+                Comparatives
             </button>
         </h2>
         <div id="collapse-5" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <h4>Comparative Constructs</h4>
+                <div class="row">
+                    <div class="col"><strong>Mandarin</strong></div>
+                    <div class="col"><strong>Cantonese</strong></div>
+                    <div class="col"><strong>Korean</strong></div>
+                    <div class="col"><strong>Japanese</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col"><partial name="_ComparativesMandarinPartial" /></div>
+                    <div class="col"><partial name="_ComparativesCantonesePartial" /></div>
+                    <div class="col"><partial name="_ComparativesKoreanPartial" /></div>
+                    <div class="col"><partial name="_ComparativesJapanesePartial" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button grammar-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+                Verbs
+            </button>
+        </h2>
+        <div id="collapse-6" class="accordion-collapse collapse">
             <div class="accordion-body">
                 <h4 class="section-header" x-on:click="showVerbsPresent = !showVerbsPresent">
                     Present Tense

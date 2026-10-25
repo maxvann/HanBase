@@ -2,7 +2,6 @@
 using HanBase.Entities;
 using HanBase.Interfaces;
 using HanBase.ViewModels;
-using Microsoft.CodeAnalysis.Elfie.Model.Strings;
 
 namespace HanBase.Repositories;
 
