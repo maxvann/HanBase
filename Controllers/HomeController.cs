@@ -80,6 +80,66 @@ public class HomeController : Controller
         return View();
     }
 
+    // GET: Home/Grammar1
+    public IActionResult Grammar1()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar2
+    public IActionResult Grammar2()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar3
+    public IActionResult Grammar3()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar4
+    public IActionResult Grammar4()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar5
+    public IActionResult Grammar5()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar6
+    public IActionResult Grammar6()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar7
+    public IActionResult Grammar7()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar8
+    public IActionResult Grammar8()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar9
+    public IActionResult Grammar9()
+    {
+        return View();
+    }
+
+    // GET: Home/Grammar10
+    public IActionResult Grammar10()
+    {
+        return View();
+    }
+
     // GET: Home/Training
     public ActionResult<TrainingViewModel> Training()
     {
