@@ -140,20 +140,20 @@ public class HomeController : Controller
         return View();
     }
 
-    // GET: Home/Grammar10_S1
-    public IActionResult Grammar10_S1()
+    // GET: Home/Grammar10s1
+    public IActionResult Grammar10s1()
     {
         return View();
     }
 
-    // GET: Home/Grammar10_S2
-    public IActionResult Grammar10_S2()
+    // GET: Home/Grammar10s2
+    public IActionResult Grammar10s2()
     {
         return View();
     }
 
-    // GET: Home/Grammar10_S3
-    public IActionResult Grammar10_S3()
+    // GET: Home/Grammar10s3
+    public IActionResult Grammar10s3()
     {
         return View();
     }

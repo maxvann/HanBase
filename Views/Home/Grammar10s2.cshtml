@@ -77,30 +77,30 @@
         <div id="collapse_section" class="accordion-collapse show">
             <div class="accordion-body">
                 <div>
-                    <a class="section-header anchor" x-on:click="showVerbsPresent = !showVerbsPresent">
+                    <a class="section-header anchor" asp-area="" asp-controller="Home" asp-action="Grammar10s1">
                         Present Tense
-                        <span class="icon caret-up-fill ms-2" x-show="showVerbsPresent"></span>
-                        <span class="icon caret-down-fill ms-2" x-show="!showVerbsPresent" x-cloak></span>
-                    </a>
-                </div>
-                <div x-show="showVerbsPresent" x-transition>
-                    <partial name="Partials/_PresentSimpleActivePartial" />
-                    <partial name="Partials/_PresentSimplePassivePartial" />
-                    <partial name="Partials/_PresentProgressiveActivePartial" />
-                    <partial name="Partials/_PresentProgressivePassivePartial" />
-                    <partial name="Partials/_PresentPerfectActivePartial" />
-                    <partial name="Partials/_PresentPerfectPassivePartial" />
-                    <partial name="Partials/_PresentPerfectProgressiveActivePartial" />
-                    <partial name="Partials/_PresentPerfectProgressivePassivePartial" />
-                </div>
-                <div>
-                    <a class="section-header anchor mt-4" asp-area="" asp-controller="Home" asp-action="Grammar10_S2">
-                        Past Tense
                         <span class="icon caret-down-fill ms-2"></span>
                     </a>
                 </div>
                 <div>
-                    <a class="section-header anchor mt-4" asp-area="" asp-controller="Home" asp-action="Grammar10_S3">
+                    <a class="section-header anchor mt-4" x-on:click="showVerbsPast = !showVerbsPast">
+                        Past Tense
+                        <span class="icon caret-up-fill ms-2" x-show="showVerbsPast"></span>
+                        <span class="icon caret-down-fill ms-2" x-show="!showVerbsPast" x-cloak></span>
+                    </a>
+                </div>
+                <div x-show="showVerbsPast" x-transition>
+                    <partial name="Partials/_PastSimpleActivePartial" />
+                    <partial name="Partials/_PastSimplePassivePartial" />
+                    <partial name="Partials/_PastProgressiveActivePartial" />
+                    <partial name="Partials/_PastProgressivePassivePartial" />
+                    <partial name="Partials/_PastPerfectActivePartial" />
+                    <partial name="Partials/_PastPerfectPassivePartial" />
+                    <partial name="Partials/_PastPerfectProgressiveActivePartial" />
+                    <partial name="Partials/_PastPerfectProgressivePassivePartial" />
+                </div>
+                <div>
+                    <a class="section-header anchor mt-4" asp-area="" asp-controller="Home" asp-action="Grammar10s3">
                         Future Tense
                         <span class="icon caret-down-fill ms-2"></span>
                     </a>
