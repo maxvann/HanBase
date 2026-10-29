@@ -584,6 +584,14 @@ table {
     cursor: pointer;
 }
 
+    .section-header.anchor {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: x-large;
+    }
+
 .spinner-border.override {
     color: var(--ink) !important;
     height: 1.5rem;

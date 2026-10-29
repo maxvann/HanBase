@@ -76,50 +76,23 @@
         </h2>
         <div class="accordion-collapse">
             <div class="accordion-body">
-                <h4 class="section-header" x-on:click="showVerbsPresent = !showVerbsPresent">
-                    Present Tense
-                    <span class="icon caret-down-fill" x-show="showVerbsPresent"></span>
-                    <span class="icon caret-up-fill" x-show="!showVerbsPresent" x-cloak></span>
-                </h4>
-                <div x-show="showVerbsPresent" x-transition>
-                    <partial name="Partials/_PresentSimpleActivePartial" />
-                    <partial name="Partials/_PresentSimplePassivePartial" />
-                    <partial name="Partials/_PresentProgressiveActivePartial" />
-                    <partial name="Partials/_PresentProgressivePassivePartial" />
-                    <partial name="Partials/_PresentPerfectActivePartial" />
-                    <partial name="Partials/_PresentPerfectPassivePartial" />
-                    <partial name="Partials/_PresentPerfectProgressiveActivePartial" />
-                    <partial name="Partials/_PresentPerfectProgressivePassivePartial" />
+                <div>
+                    <a class="section-header anchor" asp-area="" asp-controller="Home" asp-action="Grammar10_S1">
+                        Present Tense
+                        <span class="icon caret-down-fill ms-2"></span>
+                    </a>
                 </div>
-                <h4 class="section-header mt-4" x-on:click="showVerbsPast = !showVerbsPast">
-                    Past Tense
-                    <span class="icon caret-down-fill" x-show="showVerbsPast"></span>
-                    <span class="icon caret-up-fill" x-show="!showVerbsPast" x-cloak></span>
-                </h4>
-                <div x-show="showVerbsPast" x-transition>
-                    <partial name="Partials/_PastSimpleActivePartial" />
-                    <partial name="Partials/_PastSimplePassivePartial" />
-                    <partial name="Partials/_PastProgressiveActivePartial" />
-                    <partial name="Partials/_PastProgressivePassivePartial" />
-                    <partial name="Partials/_PastPerfectActivePartial" />
-                    <partial name="Partials/_PastPerfectPassivePartial" />
-                    <partial name="Partials/_PastPerfectProgressiveActivePartial" />
-                    <partial name="Partials/_PastPerfectProgressivePassivePartial" />
+                <div>
+                    <a class="section-header anchor mt-4" asp-area="" asp-controller="Home" asp-action="Grammar10_S2">
+                        Past Tense
+                        <span class="icon caret-down-fill ms-2"></span>
+                    </a>
                 </div>
-                <h4 class="section-header mt-4" x-on:click="showVerbsFuture = !showVerbsFuture">
-                    Future Tense
-                    <span class="icon caret-down-fill" x-show="showVerbsFuture"></span>
-                    <span class="icon caret-up-fill" x-show="!showVerbsFuture" x-cloak></span>
-                </h4>
-                <div x-show="showVerbsFuture" x-transition>
-                    <partial name="Partials/_FutureSimpleActivePartial" />
-                    <partial name="Partials/_FutureSimplePassivePartial" />
-                    <partial name="Partials/_FutureProgressiveActivePartial" />
-                    <partial name="Partials/_FutureProgressivePassivePartial" />
-                    <partial name="Partials/_FuturePerfectActivePartial" />
-                    <partial name="Partials/_FuturePerfectPassivePartial" />
-                    <partial name="Partials/_FuturePerfectProgressiveActivePartial" />
-                    <partial name="Partials/_FuturePerfectProgressivePassivePartial" />
+                <div>
+                    <a class="section-header anchor mt-4" asp-area="" asp-controller="Home" asp-action="Grammar10_S3">
+                        Future Tense
+                        <span class="icon caret-down-fill ms-2"></span>
+                    </a>
                 </div>
             </div>
         </div>
