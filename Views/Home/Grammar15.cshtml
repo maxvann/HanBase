@@ -105,9 +105,25 @@
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header">
-            <a class="accordion-button grammar-accordion-button collapsed" asp-area="" asp-controller="Home" asp-action="Grammar15">
+            <button class="accordion-button grammar-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_section" aria-expanded="true" aria-controls="collapse_section">
                 Conjunctions
-            </a>
+            </button>
         </h2>
+        <div id="collapse_section" class="accordion-collapse show">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col"><strong>Mandarin</strong></div>
+                    <div class="col"><strong>Cantonese</strong></div>
+                    <div class="col"><strong>Korean</strong></div>
+                    <div class="col"><strong>Japanese</strong></div>
+                </div>
+                <div class="row">
+                    <div class="col"><partial name="Partials/_ConjunctionsMandarinPartial" /></div>
+                    <div class="col"><partial name="Partials/_ConjunctionsCantonesePartial" /></div>
+                    <div class="col"><partial name="Partials/_ConjunctionsKoreanPartial" /></div>
+                    <div class="col"><partial name="Partials/_ConjunctionsJapanesePartial" /></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
