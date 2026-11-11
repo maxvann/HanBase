@@ -299,6 +299,12 @@ table {
     padding-top: 1rem;
 }
 
+.grammar-table {
+    flex-shrink: unset !important;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 .grammar-tones {
     align-content: center;
     align-items: flex-start;
