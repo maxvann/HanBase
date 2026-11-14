@@ -20,7 +20,6 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(hangulSounds[glyphNumber++])</div>
             </div>
-
         }
     </div>
 
@@ -38,7 +37,6 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(hiraganaSounds[glyphNumber++])</div>
             </div>
-
         }
     </div>
 
@@ -54,7 +52,36 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(hiraganaExtSounds[glyphNumber++])</div>
             </div>
+        }
+    </div>
 
+    <div class="glyphs-body japanese-combo">
+        @{
+            glyphNumber = 0;
+            var hiraganaComboSounds = Charts.GetHiraganaComboSound();
+        }
+
+        @foreach (var glyph in Charts.GetHiraganaCombo())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(hiraganaComboSounds[glyphNumber++])</div>
+            </div>
+        }
+    </div>
+
+    <div class="glyphs-body japanese-combo-ext">
+        @{
+            glyphNumber = 0;
+            var hiraganaComboExtSounds = Charts.GetHiraganaComboExtSound();
+        }
+
+        @foreach (var glyph in Charts.GetHiraganaComboExt())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(hiraganaComboExtSounds[glyphNumber++])</div>
+            </div>
         }
     </div>
 
@@ -72,7 +99,6 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(katakanaSounds[glyphNumber++])</div>
             </div>
-
         }
     </div>
 
@@ -88,7 +114,36 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(katakanaExtSounds[glyphNumber++])</div>
             </div>
+        }
+    </div>
 
+    <div class="glyphs-body japanese-combo">
+        @{
+            glyphNumber = 0;
+            var katakanaComboSounds = Charts.GetKatakanaComboSound();
+        }
+
+        @foreach (var glyph in Charts.GetKatakanaCombo())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(katakanaComboSounds[glyphNumber++])</div>
+            </div>
+        }
+    </div>
+
+    <div class="glyphs-body japanese-combo-ext">
+        @{
+            glyphNumber = 0;
+            var katakanaComboExtSounds = Charts.GetKatakanaComboExtSound();
+        }
+
+        @foreach (var glyph in Charts.GetKatakanaComboExt())
+        {
+            <div class="glyph-container glyph">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(katakanaComboExtSounds[glyphNumber++])</div>
+            </div>
         }
     </div>
 
@@ -106,7 +161,6 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(bopomofoSounds[glyphNumber++])</div>
             </div>
-
         }
     </div>
 
@@ -124,7 +178,6 @@
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(suzhouSounds[glyphNumber++])</div>
             </div>
-
         }
     </div>
 </div>

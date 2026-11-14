@@ -275,6 +275,14 @@ table {
         width: 52rem;
     }
 
+    .glyphs-body.japanese-combo {
+        width: 42rem;
+    }
+
+    .glyphs-body.japanese-combo-ext {
+        width: 24rem;
+    }
+
     .glyphs-body.korean {
         width: 46rem;
     }
