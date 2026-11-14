@@ -134,6 +134,30 @@ public static class Charts
         "go", "zo", "do", "bo", "po", "o", "", "yo", ""
         ];
 
+    private static readonly string[] HIRAGANA_COMBO = [
+        "U+304DU+3083", "U+3057U+3083", "U+3061U+3083", "U+306BU+3083", "U+3072U+3083", "U+307FU+3083", "U+308AU+3083",
+        "U+304DU+3085", "U+3057U+3085", "U+3061U+3085", "U+306BU+3085", "U+3072U+3085", "U+307FU+3085", "U+308AU+3085",
+        "U+304DU+3087", "U+3057U+3087", "U+3061U+3087", "U+306BU+3087", "U+3072U+3087", "U+307FU+3087", "U+308AU+3087"
+        ];
+
+    private static readonly string[] HIRAGANA_COMBO_SOUND = [
+        "kya", "sha", "cha", "nya", "hya", "mya", "rya",
+        "kyu", "shu", "chu", "nyu", "hyu", "myu", "ryu",
+        "kyo", "sho", "cho", "nyo", "hyo", "myo", "ryo"
+        ];
+
+    private static readonly string[] HIRAGANA_COMBO_EXT = [
+        "U+304EU+3083", "U+3058U+3083", "U+3073U+3083", "U+3074U+3083",
+        "U+304EU+3085", "U+3058U+3085", "U+3073U+3085", "U+3074U+3085",
+        "U+304EU+3087", "U+3058U+3087", "U+3073U+3087", "U+3074U+3087"
+        ];
+
+    private static readonly string[] HIRAGANA_COMBO_EXT_SOUND = [
+        "gya", "ja", "bya", "pya",
+        "gyu", "ju", "byu", "pyu",
+        "gyo", "jo", "byo", "pyo"
+        ];
+
     private static readonly string[] KATAKANA = [
         "U+30A2", "U+30AB", "U+30B5", "U+30BF", "U+30CA", "U+30CF", "U+30DE", "U+30E4", "U+30E9", "U+30EF",
         "U+30A4", "U+30AD", "U+30B7", "U+30C1", "U+30CB", "U+30D2", "U+30DF", "U+30A4", "U+30EA", "U+30F0",
@@ -166,6 +190,30 @@ public static class Charts
         "gu", "zu", "zu", "bu", "pu", "u", "tsu", "yu", "",
         "ge", "ze", "de", "be", "pe", "e", "", "", "",
         "go", "zo", "do", "bo", "po", "o", "", "yo", "length"
+        ];
+
+    private static readonly string[] KATAKANA_COMBO = [
+        "U+30ADU+30E3", "U+30B7U+30E3", "U+30C1U+30E3", "U+30CBU+30E3", "U+30D2U+30E3", "U+30DFU+30E3", "U+30EAU+30E3",
+        "U+30ADU+30E5", "U+30B7U+30E5", "U+30C1U+30E5", "U+30CBU+30E5", "U+30D2U+30E5", "U+30DFU+30E5", "U+30EAU+30E5",
+        "U+30ADU+30E7", "U+30B7U+30E7", "U+30C1U+30E7", "U+30CBU+30E7", "U+30D2U+30E7", "U+30DFU+30E7", "U+30EAU+30E7"
+        ];
+
+    private static readonly string[] KATAKANA_COMBO_SOUND = [
+        "kya", "sha", "cha", "nya", "hya", "mya", "rya",
+        "kyu", "shu", "chu", "nyu", "hyu", "myu", "ryu",
+        "kyo", "sho", "cho", "nyo", "hyo", "myo", "ryo"
+        ];
+
+    private static readonly string[] KATAKANA_COMBO_EXT = [
+        "U+30AEU+30E3", "U+30B8U+30E3", "U+30D3U+30E3", "U+30D4U+30E3",
+        "U+30AEU+30E5", "U+30B8U+30E5", "U+30D3U+30E5", "U+30D4U+30E5",
+        "U+30AEU+30E7", "U+30B8U+30E7", "U+30D3U+30E7", "U+30D4U+30E7"
+        ];
+
+    private static readonly string[] KATAKANA_COMBO_EXT_SOUND = [
+        "gya", "ja", "bya", "pya",
+        "gyu", "ju", "byu", "pyu",
+        "gyo", "jo", "byo", "pyo"
         ];
 
     private static readonly string[] BOPOMOFO = [
@@ -228,6 +276,26 @@ public static class Charts
         return HIRAGANA_EXT_SOUND;
     }
 
+    public static string[] GetHiraganaCombo()
+    {
+        return HIRAGANA_COMBO;
+    }
+
+    public static string[] GetHiraganaComboSound()
+    {
+        return HIRAGANA_COMBO_SOUND;
+    }
+
+    public static string[] GetHiraganaComboExt()
+    {
+        return HIRAGANA_COMBO_EXT;
+    }
+
+    public static string[] GetHiraganaComboExtSound()
+    {
+        return HIRAGANA_COMBO_EXT_SOUND;
+    }
+
     public static string[] GetKatakana()
     {
         return KATAKANA;
@@ -246,6 +314,26 @@ public static class Charts
     public static string[] GetKatakanaExtSound()
     {
         return KATAKANA_EXT_SOUND;
+    }
+
+    public static string[] GetKatakanaCombo()
+    {
+        return KATAKANA_COMBO;
+    }
+
+    public static string[] GetKatakanaComboSound()
+    {
+        return KATAKANA_COMBO_SOUND;
+    }
+
+    public static string[] GetKatakanaComboExt()
+    {
+        return KATAKANA_COMBO_EXT;
+    }
+
+    public static string[] GetKatakanaComboExtSound()
+    {
+        return KATAKANA_COMBO_EXT_SOUND;
     }
 
     public static string[] GetBopomofo()
