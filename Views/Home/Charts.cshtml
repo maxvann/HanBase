@@ -40,7 +40,7 @@
         }
     </div>
 
-    <div class="glyphs-body japanese-ext">
+    <div class="glyphs-body japanese-ext mt-4">
         @{
             glyphNumber = 0;
             var hiraganaExtSounds = Charts.GetHiraganaExtSound();
@@ -55,7 +55,7 @@
         }
     </div>
 
-    <div class="glyphs-body japanese-combo">
+    <div class="glyphs-body japanese-combo mt-4">
         @{
             glyphNumber = 0;
             var hiraganaComboSounds = Charts.GetHiraganaComboSound();
@@ -70,7 +70,7 @@
         }
     </div>
 
-    <div class="glyphs-body japanese-combo-ext">
+    <div class="glyphs-body japanese-combo-ext mt-4">
         @{
             glyphNumber = 0;
             var hiraganaComboExtSounds = Charts.GetHiraganaComboExtSound();
@@ -83,6 +83,25 @@
                 <div class="glyph-sound">@(hiraganaComboExtSounds[glyphNumber++])</div>
             </div>
         }
+    </div>
+
+    <div class="row chart-modifier mt-4">
+        <div class="col">
+            <div><strong>Lengthening Vowel</strong></div>
+            <div>a, i, u, e, o</div>
+            <div class="grammar-verbs-ideograms">あ,い,う,え,お</div>
+            <div><em>Example</em></div>
+            <div class="grammar-verbs-ideograms">と<span class="grammar-verbs-highlight">う</span>きょ<span class="grammar-verbs-highlight">う</span></div>
+            <div>Tōkyō</div>
+        </div>
+        <div class="col">
+            <div><strong>Doubling Consonant</strong></div>
+            <div>small tsu</div>
+            <div class="grammar-verbs-ideograms">っ</div>
+            <div><em>Example</em></div>
+            <div class="grammar-verbs-ideograms">き<span class="grammar-verbs-highlight">っ</span>て</div>
+            <div>kitte</div>
+        </div>
     </div>
 
     <h4 class="mt-4">Japanese Katakana</h4>
@@ -102,7 +121,7 @@
         }
     </div>
 
-    <div class="glyphs-body japanese-ext">
+    <div class="glyphs-body japanese-ext mt-4">
         @{
             glyphNumber = 0;
             var katakanaExtSounds = Charts.GetKatakanaExtSound();
@@ -117,7 +136,7 @@
         }
     </div>
 
-    <div class="glyphs-body japanese-combo">
+    <div class="glyphs-body japanese-combo mt-4">
         @{
             glyphNumber = 0;
             var katakanaComboSounds = Charts.GetKatakanaComboSound();
@@ -132,7 +151,7 @@
         }
     </div>
 
-    <div class="glyphs-body japanese-combo-ext">
+    <div class="glyphs-body japanese-combo-ext mt-4">
         @{
             glyphNumber = 0;
             var katakanaComboExtSounds = Charts.GetKatakanaComboExtSound();
@@ -145,6 +164,24 @@
                 <div class="glyph-sound">@(katakanaComboExtSounds[glyphNumber++])</div>
             </div>
         }
+    </div>
+
+    <div class="row chart-modifier mt-4">
+        <div class="col">
+            <div><strong>Lengthening Mark</strong></div>
+            <div class="grammar-verbs-ideograms">ー</div>
+            <div><em>Example</em></div>
+            <div class="grammar-verbs-ideograms">コ<span class="grammar-verbs-highlight">ー</span>ヒ<span class="grammar-verbs-highlight">ー</span></div>
+            <div>kōhī</div>
+        </div>
+        <div class="col">
+            <div><strong>Doubling Consonant</strong></div>
+            <div>small tsu</div>
+            <div class="grammar-verbs-ideograms">ッ</div>
+            <div><em>Example</em></div>
+            <div class="grammar-verbs-ideograms">キ<span class="grammar-verbs-highlight">ッ</span>テ</div>
+            <div>kitte</div>
+        </div>
     </div>
 
     <h4 class="mt-4">Chinese Bopomofo (Zhuyin Fuhao)</h4>

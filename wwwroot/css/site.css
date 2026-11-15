@@ -127,6 +127,10 @@ table {
         filter: brightness(1.08);
     }
 
+.chart-modifier {
+    width: 40rem;
+}
+
 .charts-container {
     padding-bottom: 5rem;
 }
@@ -272,7 +276,7 @@ table {
     }
 
     .glyphs-body.japanese-ext {
-        width: 52rem;
+        width: 58rem;
     }
 
     .glyphs-body.japanese-combo {

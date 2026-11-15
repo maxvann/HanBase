@@ -119,19 +119,19 @@ public static class Charts
         ];
 
     private static readonly string[] HIRAGANA_EXT = [
-        "U+304C", "U+3056", "U+3060", "U+3070", "U+3071", "U+3041", "", "U+3083", "U+308E",
-        "U+304E", "U+3058", "U+3062", "U+3073", "U+3074", "U+3043", "", "", "",
-        "U+3050", "U+305A", "U+3065", "U+3076", "U+3077", "U+3045", "U+3063", "U+3085", "",
-        "U+3052", "U+305C", "U+3067", "U+3079", "U+307A", "U+3047", "", "", "",
-        "U+3054", "U+305E", "U+3069", "U+307C", "U+307D", "U+3049", "", "U+3087", ""
+        "U+304C", "U+3056", "U+3060", "U+3070", "U+3071", "", "U+3041", "", "U+3083", "U+308E",
+        "U+304E", "U+3058", "U+3062", "U+3073", "U+3074", "", "U+3043", "", "", "",
+        "U+3050", "U+305A", "U+3065", "U+3076", "U+3077", "", "U+3045", "U+3063", "U+3085", "",
+        "U+3052", "U+305C", "U+3067", "U+3079", "U+307A", "", "U+3047", "", "", "",
+        "U+3054", "U+305E", "U+3069", "U+307C", "U+307D", "", "U+3049", "", "U+3087", ""
         ];
 
     private static readonly string[] HIRAGANA_EXT_SOUND = [
-        "ga", "za", "da", "ba", "pa", "a", "", "ya", "wa",
-        "gi", "ji", "ji", "bi", "pi", "i", "", "", "",
-        "gu", "zu", "zu", "bu", "pu", "u", "tsu", "yu", "",
-        "ge", "ze", "de", "be", "pe", "e", "", "", "",
-        "go", "zo", "do", "bo", "po", "o", "", "yo", ""
+        "ga", "za", "da", "ba", "pa", "", "a", "", "ya", "wa",
+        "gi", "ji", "ji", "bi", "pi", "", "i", "", "", "",
+        "gu", "zu", "zu", "bu", "pu", "", "u", "tsu", "yu", "",
+        "ge", "ze", "de", "be", "pe", "", "e", "", "", "",
+        "go", "zo", "do", "bo", "po", "", "o", "", "yo", ""
         ];
 
     private static readonly string[] HIRAGANA_COMBO = [
@@ -177,19 +177,19 @@ public static class Charts
         ];
 
     private static readonly string[] KATAKANA_EXT = [
-        "U+30AC", "U+30B6", "U+30C0", "U+30D0", "U+30D1", "U+30A1", "", "U+30E3", "U+30EE",
-        "U+30AE", "U+30B8", "U+30C2", "U+30D3", "U+30D4", "U+30A3", "", "", "",
-        "U+30B0", "U+30BA", "U+30C5", "U+30D6", "U+30D7", "U+30A5", "U+30C3", "U+30E5", "",
-        "U+30B2", "U+30BC", "U+30C7", "U+30D9", "U+30DA", "U+30A7", "", "", "",
-        "U+30B4", "U+30BE", "U+30C9", "U+30DC", "U+30DD", "U+30A9", "","U+30E7", "U+30FC"
+        "U+30AC", "U+30B6", "U+30C0", "U+30D0", "U+30D1", "", "U+30A1", "", "U+30E3", "U+30EE",
+        "U+30AE", "U+30B8", "U+30C2", "U+30D3", "U+30D4", "", "U+30A3", "", "", "",
+        "U+30B0", "U+30BA", "U+30C5", "U+30D6", "U+30D7", "", "U+30A5", "U+30C3", "U+30E5", "",
+        "U+30B2", "U+30BC", "U+30C7", "U+30D9", "U+30DA", "", "U+30A7", "", "", "",
+        "U+30B4", "U+30BE", "U+30C9", "U+30DC", "U+30DD", "", "U+30A9", "","U+30E7", "U+30FC"
         ];
 
     private static readonly string[] KATAKANA_EXT_SOUND = [
-        "ga", "za", "da", "ba", "pa", "a", "", "ya", "wa",
-        "gi", "ji", "ji", "bi", "pi", "i", "", "", "",
-        "gu", "zu", "zu", "bu", "pu", "u", "tsu", "yu", "",
-        "ge", "ze", "de", "be", "pe", "e", "", "", "",
-        "go", "zo", "do", "bo", "po", "o", "", "yo", "length"
+        "ga", "za", "da", "ba", "pa", "", "a", "", "ya", "wa",
+        "gi", "ji", "ji", "bi", "pi", "", "i", "", "", "",
+        "gu", "zu", "zu", "bu", "pu", "", "u", "tsu", "yu", "",
+        "ge", "ze", "de", "be", "pe", "", "e", "", "", "",
+        "go", "zo", "do", "bo", "po", "", "o", "", "yo", "length"
         ];
 
     private static readonly string[] KATAKANA_COMBO = [
