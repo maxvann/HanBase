@@ -104,9 +104,9 @@ public static class Charts
         "k", "kk", "n", "t", "tt", "l", "m", "",
         "p", "pp", "s", "ss", "ng", "ch", "cch", "",
         "chh", "kh", "th", "ph", "h", "", "", "",
-        "a", "ae", "ya", "yae", "ŏ", "e", "yŏ", "ye",
-        "o", "wa", "wae", "oe", "yo", "u", "wŏ", "",
-        "we", "wi", "yu", "ŭ", "ŭy", "i", "", ""
+        "a", "ae", "ya", "yae", "oh", "e", "yoh", "ye",
+        "o", "wa", "wae", "oe", "yo", "u", "woh", "",
+        "we", "wi", "yu", "uh", "uhy", "i", "", ""
         ];
 
     private static readonly string[] HIRAGANA = [
