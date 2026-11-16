@@ -250,6 +250,10 @@ table {
     width: 5rem;
 }
 
+.glyph-hover:hover {
+    background-color: var(--sand);
+}
+
 .glyph-mark {
     font-size: 2rem;
 }
@@ -261,6 +265,7 @@ table {
 .glyphs-body {
     align-content: center;
     align-items: center;
+    cursor: default;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -288,6 +293,7 @@ table {
     }
 
     .glyphs-body.korean {
+        cursor: pointer;
         width: 46rem;
     }
 

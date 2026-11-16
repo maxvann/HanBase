@@ -8,15 +8,18 @@
 <div class="charts-container">
     <h4>Korean Hangul</h4>
 
+    <div><em>Click a cell to hear how the Hangul is pronounced</em></div>
+
     <div class="glyphs-body korean">
         @{
             var glyphNumber = 0;
             var hangulSounds = Charts.GetHangulSound();
+            var hangulAudio = Charts.GetHangulAudio();
         }
 
         @foreach (var glyph in Charts.GetHangul())
         {
-            <div class="glyph-container glyph">
+            <div class="glyph-container glyph glyph-hover" onclick="playHangul('@hangulAudio[glyphNumber]');">
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(hangulSounds[glyphNumber++])</div>
             </div>

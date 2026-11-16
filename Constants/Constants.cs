@@ -100,6 +100,15 @@ public static class Charts
         "we", "wi", "yu", "ŭ", "ŭy", "i", "", ""
         ];
 
+    private static readonly string[] HANGUL_AUDIO = [
+        "k", "kk", "n", "t", "tt", "l", "m", "",
+        "p", "pp", "s", "ss", "ng", "ch", "cch", "",
+        "chh", "kh", "th", "ph", "h", "", "", "",
+        "a", "ae", "ya", "yae", "ŏ", "e", "yŏ", "ye",
+        "o", "wa", "wae", "oe", "yo", "u", "wŏ", "",
+        "we", "wi", "yu", "ŭ", "ŭy", "i", "", ""
+        ];
+
     private static readonly string[] HIRAGANA = [
         "U+3042", "U+304B", "U+3055", "U+305F", "U+306A", "U+306F", "U+307E", "U+3084", "U+3089", "U+308F",
         "U+3044", "U+304D", "U+3057", "U+3061", "U+306B", "U+3072", "U+307F", "U+3044", "U+308A", "U+3090",
@@ -254,6 +263,11 @@ public static class Charts
     public static string[] GetHangulSound()
     {
         return HANGUL_SOUND;
+    }
+
+    public static string[] GetHangulAudio()
+    {
+        return HANGUL_AUDIO;
     }
 
     public static string[] GetHiragana()
