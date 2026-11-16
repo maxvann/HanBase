@@ -206,6 +206,12 @@ public class HomeController : Controller
         return View();
     }
 
+    // GET: Home/Grammar19
+    public IActionResult Grammar19()
+    {
+        return View();
+    }
+
     // GET: Home/Training
     public ActionResult<TrainingViewModel> Training()
     {
