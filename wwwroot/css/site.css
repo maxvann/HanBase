@@ -273,6 +273,7 @@ table {
 }
 
     .glyphs-body.chinese {
+        cursor: pointer;
         width: 42rem;
     }
 

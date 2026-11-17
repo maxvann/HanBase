@@ -15,6 +15,18 @@ function playHangul(fileCode) {
     }
 }
 
+function playPinyin(fileCode) {
+    try {
+        if (fileCode === undefined || fileCode === null || fileCode.length === 0) {
+            return;
+        }
+
+        playAudio(`/mandarin_sounds/${fileCode}.mp3`);
+    } catch {
+        console.log('Error playing file.');
+    }
+}
+
 function playAudio(filename) {
     const audio = new Audio(filename);
 

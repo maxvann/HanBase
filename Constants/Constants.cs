@@ -243,6 +243,15 @@ public static class Charts
         "wu", "yu", "v", "ng", "ny", "ih", "yi"
         ];
 
+    private static readonly string[] BOPOMOFO_AUDIO = [
+        "ba1", "pa1", "ma1", "fa1", "da1", "ta1", "na1",
+        "la1", "ga1", "ka1", "ha1", "jia1", "qia1", "xia1",
+        "zha1", "chi1", "shi1", "ri1", "za1", "ca1", "sa1",
+        "a1", "o1", "e1", "e1", "ai1", "ei1", "ao1",
+        "ou1", "an1", "en1", "ang1", "eng1", "er1", "",
+        "wu1", "yu1", "fu1", "ang1", "nie1", "yi1", "yi1"
+        ];
+
     private static readonly string[] SUZHOU = [
         "U+3007", "U+3021", "U+3022", "U+3023", "U+3024",
         "U+3025", "U+3026", "U+3027", "U+3028", "U+3029",
@@ -358,6 +367,11 @@ public static class Charts
     public static string[] GetBopomofoSound()
     {
         return BOPOMOFO_SOUND;
+    }
+
+    public static string[] GetBopomofoAudio()
+    {
+        return BOPOMOFO_AUDIO;
     }
 
     public static string[] GetSuzhou()
