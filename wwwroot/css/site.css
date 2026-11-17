@@ -143,6 +143,10 @@ table {
     width: 50%;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .detail-ideogram {
     text-align: center;
 }
@@ -418,6 +422,15 @@ table {
         background-image: url('/img/skip-forward-fill-muted.svg');
     }
 
+    .icon.volume-up-fill {
+        background-image: url('/img/volume-up-fill.svg');
+    }
+
+    .icon.sound {
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+
 .ideogram-container {
     align-items: center;
     display: flex;
@@ -603,6 +616,10 @@ table {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
+}
+
+.sound-table {
+    height: 2.3rem;
 }
 
 .spinner-border.override {
