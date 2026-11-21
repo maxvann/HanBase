@@ -238,7 +238,7 @@ public static class Charts
         "b", "p", "m", "f", "d", "t", "n",
         "l", "g", "k", "h", "j", "q", "x",
         "zh", "chi", "shi", "r", "z", "c", "s",
-        "a", "o", "e", "eh", "ai", "ei", "ao",
+        "a", "o", "e", "ye", "ai", "ei", "ao",
         "ou", "an", "en", "ang", "eng", "er", "",
         "wu", "yu", "v", "ng", "ny", "ih", "yi"
         ];
@@ -247,9 +247,27 @@ public static class Charts
         "ba1", "pa1", "ma1", "fa1", "da1", "ta1", "na1",
         "la1", "ga1", "ka1", "ha1", "jia1", "qia1", "xia1",
         "zha1", "chi1", "shi1", "ri1", "za1", "ca1", "sa1",
-        "a1", "o1", "e1", "e1", "ai1", "ei1", "ao1",
+        "a1", "o1", "e1", "ye1", "ai1", "ei1", "ao1",
         "ou1", "an1", "en1", "ang1", "eng1", "er1", "",
         "wu1", "yu1", "fu1", "ang1", "nie1", "yi1", "yi1"
+        ];
+
+    private static readonly string[] BOPOMOFO_COMBO = [
+        "U+3127U+311A", "U+3127U+311D", "U+3127U+3120", "U+3127U+3121", "U+3127U+3122", "U+3127U+3123", "U+3127U+3124", "U+3127U+3125",
+        "U+3128U+311A", "U+3128U+311B", "U+3128U+311E", "U+3128U+311F", "U+3128U+3122", "U+3128U+3123", "U+3128U+3124", "U+3128U+3125",
+        "U+3129U+311D", "U+3129U+3122", "U+3129U+3123", "U+3129U+3125"
+        ];
+
+    private static readonly string[] BOPOMOFO_COMBO_SOUND = [
+        "ya", "ye", "yao", "you", "yan", "yin", "yang", "ying",
+        "wa", "wo", "wai", "wei", "wan", "wen", "wang", "weng",
+        "yue", "yuan", "yun", "yong"
+        ];
+
+    private static readonly string[] BOPOMOFO_COMBO_AUDIO = [
+        "ya1", "ye1", "yao1", "you1", "yan1", "yin1", "yang1", "ying1",
+        "wa1", "wo1", "wai1", "wei1", "wan1", "wen1", "wang1", "weng1",
+        "yue1", "yuan1", "yun1", "yong1"
         ];
 
     private static readonly string[] SUZHOU = [
@@ -372,6 +390,21 @@ public static class Charts
     public static string[] GetBopomofoAudio()
     {
         return BOPOMOFO_AUDIO;
+    }
+
+    public static string[] GetBopomofoCombo()
+    {
+        return BOPOMOFO_COMBO;
+    }
+
+    public static string[] GetBopomofoComboSound()
+    {
+        return BOPOMOFO_COMBO_SOUND;
+    }
+
+    public static string[] GetBopomofoComboAudio()
+    {
+        return BOPOMOFO_COMBO_AUDIO;
     }
 
     public static string[] GetSuzhou()

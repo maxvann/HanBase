@@ -187,7 +187,7 @@
         </div>
     </div>
 
-    <h4 class="mt-4">Chinese Bopomofo (Zhuyin Fuhao)</h4>
+    <h4 class="mt-4">Chinese Bopomofo (Zhùyīn Fúhào 注音符号 / ㄓㄨˋ ㄧㄣ ㄈㄨˊ ㄏㄠˋ)</h4>
 
     <div><em>Click a cell to hear how the Chinese is pronounced</em></div>
 
@@ -203,6 +203,22 @@
             <div class="glyph-container glyph glyph-hover" onclick="playPinyin('@pinyinAudio[glyphNumber]');">
                 <div class="glyph-mark">@glyph.ToUnicode()</div>
                 <div class="glyph-sound">@(bopomofoSounds[glyphNumber++])</div>
+            </div>
+        }
+    </div>
+
+    <div class="glyphs-body chinese-combo mt-4">
+        @{
+            glyphNumber = 0;
+            var bopomofoComboSounds = Charts.GetBopomofoComboSound();
+            var pinyinComboAudio = Charts.GetBopomofoComboAudio();
+        }
+
+        @foreach (var glyph in Charts.GetBopomofoCombo())
+        {
+            <div class="glyph-container glyph glyph-hover" onclick="playPinyin('@pinyinComboAudio[glyphNumber]');">
+                <div class="glyph-mark">@glyph.ToUnicode()</div>
+                <div class="glyph-sound">@(bopomofoComboSounds[glyphNumber++])</div>
             </div>
         }
     </div>

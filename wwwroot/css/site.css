@@ -281,6 +281,11 @@ table {
         width: 42rem;
     }
 
+    .glyphs-body.chinese-combo {
+        cursor: pointer;
+        width: 48rem;
+    }
+
     .glyphs-body.japanese {
         width: 58rem;
     }
