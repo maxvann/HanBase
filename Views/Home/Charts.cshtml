@@ -10,7 +10,7 @@
 
     <div><em>Click a cell to hear how the Hangul is pronounced</em></div>
 
-    <div class="glyphs-body korean">
+    <div class="glyphs-body korean mb-4">
         @{
             var glyphNumber = 0;
             var hangulSounds = Charts.GetHangulSound();
@@ -25,6 +25,10 @@
             </div>
         }
     </div>
+
+    <h4>Korean Morphology</h4>
+
+    <partial name="Partials/_KoreanMorphologyPartial" />
 
     <h4 class="mt-4">Japanese Hiragana</h4>
 

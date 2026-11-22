@@ -333,6 +333,27 @@ table {
     margin-right: 0.5rem;
 }
 
+.grammar-table-morph {
+    text-wrap: nowrap;
+    width: 0rem;
+}
+
+    .grammar-table-morph.spacer {
+        width: 1.5rem;
+    }
+
+    .grammar-table-morph.center {
+        text-align: center;
+    }
+
+    .grammar-table-morph.left {
+        text-align: start;
+    }
+
+    .grammar-table-morph.right {
+        text-align: end;
+    }
+
 .grammar-tones {
     align-content: center;
     align-items: flex-start;
@@ -384,6 +405,10 @@ table {
     height: 1.5rem;
     width: 1.5rem;
 }
+
+    .icon.arrow-right {
+        background-image: url('/img/arrow-right.svg');
+    }
 
     .icon.caret-down-fill {
         background-image: url('/img/caret-down-fill.svg');
