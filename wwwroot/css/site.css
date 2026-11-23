@@ -396,6 +396,26 @@ table {
     z-index: 30;
 }
 
+.history-popup {
+    background-color: var(--cream);
+    border: 1px solid var(--gold);
+    height: 27rem;
+    left: 1rem;
+    padding: 1rem;
+    position: absolute;
+    top: 5rem;
+    width: 20rem;
+    z-index: 1000;
+}
+
+.history-popup-entry {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
 .icon {
     background-position: center;
     background-repeat: no-repeat;

@@ -38,6 +38,7 @@
             const response = await fetch(`/Home/TransformText?text=${this.transform}`);
             this.transform = await response.text();
         },
+        searchHistory: [],
         setHistory() {
             if (this.$refs.historyData === undefined || this.$refs.historyData === null ||
                 this.$refs.historyData.textContent === undefined || this.$refs.historyData.textContent === null) {
@@ -59,6 +60,8 @@
                 unicode: data.character.unicode,
                 reading: data.readings.englishDefinition
             });
+
+            this.searchHistory = this.getHistory();
         },
         getHistory() {
             var dict = new HistoryDict();

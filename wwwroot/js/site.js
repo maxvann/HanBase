@@ -44,7 +44,7 @@ function truncate(str, maxLength = 20) {
 }
 
 class HistoryDict {
-    constructor(storageKey = 'searchHistory', maxSize = 20) {
+    constructor(storageKey = 'searchHistory', maxSize = 10) {
         this.storageKey = storageKey;
         this.maxSize = maxSize;
     }
