@@ -399,17 +399,26 @@ table {
 .history-popup {
     background-color: var(--cream);
     border: 1px solid var(--gold);
+    border-radius: 0.3rem;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
     height: 27rem;
     left: 1rem;
     padding: 1rem;
-    position: absolute;
-    top: 5rem;
+    position: fixed;
+    top: -25rem;
+    transform: translateY(0%);
+    transition: transform 0.45s ease-in-out;
     width: 20rem;
-    z-index: 1000;
+    z-index: 25;
 }
+
+    .history-popup.open {
+        transform: translateY(28.5rem);
+    }
 
 .history-popup-entry {
     align-items: center;
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

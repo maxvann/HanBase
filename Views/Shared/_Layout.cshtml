@@ -14,6 +14,7 @@
 <body x-data="{
         showExport: $persist(true).using(sessionStorage),
         showDetailsSlider: $persist(false).using(sessionStorage),
+        showHistorySlider: $persist(false).using(sessionStorage),
         showRadicalsSlider: $persist(false).using(sessionStorage),
         showSealIdeogram: $persist(false).using(sessionStorage),
         showScriptIdeogram: $persist(false).using(sessionStorage),
@@ -61,11 +62,11 @@
                 reading: data.readings.englishDefinition
             });
 
-            this.searchHistory = this.getHistory();
+            this.searchHistory = dict.all();
         },
-        getHistory() {
+        init() {
             var dict = new HistoryDict();
-            return dict.all();
+            this.searchHistory = dict.all();
         }
     }">
     <header class="header-main">
