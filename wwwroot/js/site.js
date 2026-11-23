@@ -37,16 +37,17 @@ function playAudio(filename) {
 }
 
 class HistoryDict {
-    constructor(storageKey = 'searchHistory', maxSize = 5) { // MAXV - set back maxSize to 20
+    constructor(storageKey = 'searchHistory', maxSize = 20) {
         this.storageKey = storageKey;
         this.maxSize = maxSize;
     }
 
     _load() {
         try {
-            return JSON.parse(localStorage.getItem(this.storageKey)) || {};
+            const raw = JSON.parse(localStorage.getItem(this.storageKey));
+            return raw || { entries: {}, order: [] };
         } catch {
-            return {};
+            return { entries: {}, order: [] };
         }
     }
 
@@ -54,70 +55,77 @@ class HistoryDict {
         localStorage.setItem(this.storageKey, JSON.stringify(dict));
     }
 
-    _evictLast(dict) {
-        const keys = Object.keys(dict);
+    _evictFirst(dict) {
+        if (dict.order.length < this.maxSize) return;
 
-        if (keys.length < this.maxSize) return;
+        const key = dict.order[0];
 
-        delete dict[keys[keys.length - 1]];
+        delete dict.entries[key];
+
+        dict.order.shift();
     }
 
     set(key, { ideogram, unicode, reading }) {
         const dict = this._load();
 
-        if (!(key in dict)) {
-            this._evictLast(dict);
-        }
+        if (key in dict.entries) {
+            dict.entries[key] = {
+                ideogram: ideogram,
+                unicode: unicode,
+                reading: reading
+            };
+        } else {
+            this._evictFirst(dict);
 
-        dict[key] = {
-            ideogram: ideogram,
-            unicode: unicode,
-            reading: reading
-        };
+            dict.entries[key] = {
+                ideogram: ideogram,
+                unicode: unicode,
+                reading: reading
+            };
+
+            dict.order.push(key);
+        }
 
         this._save(dict);
     }
 
     get(key) {
-        return this._load()[key] ?? null;
+        return this._load().entries[key] ?? null;
     }
 
     remove(key) {
         const dict = this._load();
 
-        delete dict[key];
+        delete dict.entries[key];
+
+        dict.order = dict.order.filter(k => k !== key);
 
         this._save(dict);
     }
 
     has(key) {
-        return key in this._load();
+        return key in this._load().entries;
     }
 
     size() {
-        return Object.keys(this._load()).length;
+        return this._load().order.length;
     }
 
     all() {
-        return this._load();
+        return this._load().entries;
     }
 
     keys() {
-        return Object.keys(this._load());
+        return this._load().order;
     }
 
     values() {
-        return Object.values(this._load());
+        const data = this._load();
+
+        return data.order.map(key => [key, data.entries[key]]);
     }
 
     clear() {
         localStorage.removeItem(this.storageKey);
     }
 }
-
-/*
-// Iterate all entries
-for (const [key, { name, value, timestamp }] of Object.entries(dict.all())) {
-  console.log(`${name} (${key}): ${value} — set at ${timestamp}`);
-}
-*/
