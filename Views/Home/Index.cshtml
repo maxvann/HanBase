@@ -182,7 +182,8 @@ else
 @* END - Radicals slider *@
 
 @* BEGIN - Details slider *@
-<div :class="[ 'details-slider-backdrop', showDetailsSlider ? 'visible' : '' ]" x-cloak x-on:click="showDetailsSlider = !showDetailsSlider">
+<script type="text/data" x-ref="historyData">@Json.Serialize(Model)</script>
+<div :class="[ 'details-slider-backdrop', showDetailsSlider ? 'visible' : '' ]" x-cloak x-on:click="showDetailsSlider = !showDetailsSlider; setHistory();">
 </div>
 <aside :class="[ 'details-slider', showDetailsSlider ? 'open' : '' ]" x-cloak>
     <div class="details-head">

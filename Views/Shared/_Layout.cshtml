@@ -37,6 +37,32 @@
         async transformText() {
             const response = await fetch(`/Home/TransformText?text=${this.transform}`);
             this.transform = await response.text();
+        },
+        setHistory() {
+            if (this.$refs.historyData === undefined || this.$refs.historyData === null ||
+                this.$refs.historyData.textContent === undefined || this.$refs.historyData.textContent === null) {
+                return;
+            }
+
+            var data = JSON.parse(this.$refs.historyData.textContent);
+
+            if (data === undefined || data === null ||
+                data.character === undefined || data.character === null ||
+                data.readings === undefined || data.readings === null) {
+                return;
+            }
+
+            var dict = new HistoryDict();
+
+            dict.set(data.character.unicode, {
+                ideogram: data.character.ideogram,
+                unicode: data.character.unicode,
+                reading: data.readings.englishDefinition
+            });
+        },
+        getHistory() {
+            var dict = new HistoryDict();
+            return dict.all();
         }
     }">
     <header class="header-main">
