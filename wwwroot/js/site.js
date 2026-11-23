@@ -36,6 +36,13 @@ function playAudio(filename) {
     }
 }
 
+function truncate(str, maxLength = 20) {
+    const ellipsis = '…';
+    return str.length > maxLength
+        ? str.slice(0, maxLength - ellipsis.length) + ellipsis
+        : str;
+}
+
 class HistoryDict {
     constructor(storageKey = 'searchHistory', maxSize = 20) {
         this.storageKey = storageKey;
@@ -55,7 +62,7 @@ class HistoryDict {
         localStorage.setItem(this.storageKey, JSON.stringify(dict));
     }
 
-    _evictFirst(dict) {
+    _evict(dict) {
         if (dict.order.length < this.maxSize) return;
 
         const key = dict.order[0];
@@ -72,15 +79,15 @@ class HistoryDict {
             dict.entries[key] = {
                 ideogram: ideogram,
                 unicode: unicode,
-                reading: reading
+                reading: truncate(reading)
             };
         } else {
-            this._evictFirst(dict);
+            this._evict(dict);
 
             dict.entries[key] = {
                 ideogram: ideogram,
                 unicode: unicode,
-                reading: reading
+                reading: truncate(reading)
             };
 
             dict.order.push(key);
