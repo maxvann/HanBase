@@ -344,15 +344,15 @@ else
 </aside>
 @* END - Details slider *@
 
-@* BEGIN - Search history popup *@
-<div :class="[ 'history-popup', showHistorySlider ? 'open' : '' ]" x-cloak>
+@* BEGIN - Search history slider *@
+<div :class="[ 'history-slider', showHistorySlider ? 'open' : '' ]" x-cloak>
     <h4>Search History</h4>
     <template x-for="item in searchHistory" :key="item.unicode">
-        <div class="history-popup-entry">
+        <div class="history-slider-entry" x-on:click="getHistory(item.unicode)">
             <div class="fs-4 me-2" x-text="item.ideogram"></div>
             <div class="fw-bold me-2" x-text="item.unicode"></div>
             <div x-text="item.reading"></div>
         </div>
     </template>
 </div>
-@* END - Search history popup *@
+@* END - Search history slider *@

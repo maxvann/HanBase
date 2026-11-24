@@ -64,6 +64,11 @@
 
             this.searchHistory = dict.all();
         },
+        async getHistory(unicode) {
+            await fetch(`/Home/SearchPager?criteria=6&search=${encodeURIComponent(unicode)}&page=1`);
+            await fetch(`/Home/SearchDetails?unicode=${encodeURIComponent(unicode)}`);
+            window.location.reload();
+        },
         init() {
             var dict = new HistoryDict();
             this.searchHistory = dict.all();
