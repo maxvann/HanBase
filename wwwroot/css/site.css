@@ -425,6 +425,11 @@ table {
     justify-content: flex-start;
 }
 
+    .history-slider-entry:hover {
+        background-color: var(--gold);
+        color: var(--cream);
+    }
+
 .icon {
     background-position: center;
     background-repeat: no-repeat;

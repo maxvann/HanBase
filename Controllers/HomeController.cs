@@ -74,6 +74,12 @@ public class HomeController : Controller
         return View();
     }
 
+    // GET: Home/Cultural
+    public IActionResult Cultural()
+    {
+        return View();
+    }
+
     // GET: Home/Grammar
     public IActionResult Grammar()
     {
