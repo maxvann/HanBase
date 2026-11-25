@@ -89,6 +89,23 @@ table {
     width: 3rem;
 }
 
+.banknote {
+    width: 25rem;
+}
+
+.banknote-container {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.banknote-container-footer {
+    margin-bottom: 6rem;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--ink);
 }
