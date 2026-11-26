@@ -43,6 +43,17 @@ function truncate(str, maxLength = 20) {
         : str;
 }
 
+function showToast() {
+    const toast = document.getElementById('clipboard_toast');
+
+    toast.style.visibility = "visible";
+
+    const timer = window.setTimeout(() => {
+        toast.style.visibility = "hidden";
+        window.clearTimeout(timer);
+    }, 4500);
+}
+
 class HistoryDict {
     constructor(storageKey = 'searchHistory', maxSize = 10) {
         this.storageKey = storageKey;
@@ -122,14 +133,26 @@ class HistoryDict {
         return this._load().entries;
     }
 
+    ideograms() {
+        const ideograms = [];
+        const dict = this._load();
+        const keys = dict.order;
+
+        keys.forEach((key) => {
+            ideograms.push(dict.entries[key].ideogram);
+        });
+
+        return ideograms.join("");
+    }
+
     keys() {
         return this._load().order;
     }
 
     values() {
-        const data = this._load();
+        const dict = this._load();
 
-        return data.order.map(key => [key, data.entries[key]]);
+        return dict.order.map(key => [key, dict.entries[key]]);
     }
 
     clear() {

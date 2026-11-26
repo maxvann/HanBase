@@ -28,7 +28,7 @@
             const newWin = window.open('', '_blank');
             const response = await fetch('/Home/ExportPage', { method: 'GET', headers: { 'Accept': 'application/json' } });
             this.path = await response.json();
-            if (this.path != null)
+            if (this.path !== null)
             {
                 this.showExport = true;
                 newWin.location.href = '/docs/' + this.path;
@@ -39,6 +39,7 @@
             const response = await fetch(`/Home/TransformText?text=${this.transform}`);
             this.transform = await response.text();
         },
+        searchIdeograms: $persist('').using(sessionStorage),
         searchHistory: [],
         setHistory() {
             if (this.$refs.historyData === undefined || this.$refs.historyData === null ||
@@ -63,15 +64,23 @@
             });
 
             this.searchHistory = dict.all();
+            this.searchIdeograms = dict.ideograms();
         },
         async getHistory(unicode) {
             await fetch(`/Home/SearchPager?criteria=6&search=${encodeURIComponent(unicode)}&page=1`);
             await fetch(`/Home/SearchDetails?unicode=${encodeURIComponent(unicode)}`);
             window.location.reload();
         },
+        copyToClipboard() {
+            if (this.searchIdeograms !== '' && navigator && navigator.clipboard) {
+                navigator.clipboard.writeText(this.searchIdeograms);
+                showToast();
+            }
+        },
         init() {
             var dict = new HistoryDict();
             this.searchHistory = dict.all();
+            this.searchIdeograms = dict.ideograms();
         }
     }">
     <header class="header-main">

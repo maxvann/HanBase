@@ -152,6 +152,22 @@ table {
     padding-bottom: 5rem;
 }
 
+.clipboard-toast {
+    background: var(--ink);
+    bottom: 1.56rem;
+    box-shadow: 0 0.5rem 1.88rem #0003;
+    color: var(--white);
+    font-size: 0.7rem;
+    left: 50%;
+    letter-spacing: 0.06rem;
+    padding: 0.8rem 1.25rem;
+    position: fixed;
+    transform: translateX(-50%);
+    transition: transform 0.45s ease-in-out;
+    visibility: hidden;
+    z-index: 60;
+}
+
 .container-main {
     padding-bottom: 2.5rem;
 }
@@ -418,11 +434,11 @@ table {
     border: 1px solid var(--gold);
     border-radius: 0.3rem;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-    height: 27rem;
+    height: 30rem;
     left: 1rem;
     padding: 1rem;
     position: fixed;
-    top: -25rem;
+    top: -27rem;
     transform: translateY(0%);
     transition: transform 0.45s ease-in-out;
     width: 20rem;
@@ -430,7 +446,7 @@ table {
 }
 
     .history-slider.open {
-        transform: translateY(28.5rem);
+        transform: translateY(30.5rem);
     }
 
 .history-slider-entry {
@@ -469,6 +485,10 @@ table {
     .icon.caret-up-fill {
         background-image: url('/img/caret-up-fill.svg');
         margin: 0;
+    }
+
+    .icon.copy {
+        background-image: url('/img/copy.svg');
     }
 
     .icon.filetype-html {
@@ -697,6 +717,19 @@ table {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
+}
+
+.search-ideograms {
+    cursor: default;
+    width: 15.5rem;
+}
+
+.search-ideograms-container {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .sound-table {

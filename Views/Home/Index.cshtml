@@ -347,6 +347,13 @@ else
 @* BEGIN - Search history slider *@
 <div :class="[ 'history-slider', showHistorySlider ? 'open' : '' ]" x-cloak>
     <h4>Search History</h4>
+    <div class="search-ideograms-container">
+        <div class="search-ideograms grammar-verbs-ideograms" x-text="searchIdeograms"></div>
+        <div class="pagination-icon-container pointer" x-on:click="copyToClipboard()">
+            <div class="icon copy"></div>
+        </div>
+    </div>
+    <hr class="dropdown-divider" />
     <template x-for="item in searchHistory" :key="item.unicode">
         <div class="history-slider-entry" x-on:click="getHistory(item.unicode)">
             <div class="fs-4 me-2" x-text="item.ideogram"></div>
@@ -356,3 +363,7 @@ else
     </template>
 </div>
 @* END - Search history slider *@
+
+@* BEGIN - Toast *@
+<div id="clipboard_toast" class="clipboard-toast">✦ Ideograms copied to clipboard</div>
+@* END - Toast *@
