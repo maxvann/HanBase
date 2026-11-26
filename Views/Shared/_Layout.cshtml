@@ -74,7 +74,7 @@
         copyToClipboard() {
             if (this.searchIdeograms !== '' && navigator && navigator.clipboard) {
                 navigator.clipboard.writeText(this.searchIdeograms);
-                showToast();
+                showToast('Ideograms copied to clipboard');
             }
         },
         init() {

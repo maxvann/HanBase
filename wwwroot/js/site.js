@@ -43,13 +43,16 @@ function truncate(str, maxLength = 20) {
         : str;
 }
 
-function showToast() {
+function showToast(message) {
     const toast = document.getElementById('clipboard_toast');
 
+    toast.innerText = "✦ " + message;
     toast.style.visibility = "visible";
+    toast.style.opacity = "1";
 
     const timer = window.setTimeout(() => {
         toast.style.visibility = "hidden";
+        toast.style.opacity = "0";
         window.clearTimeout(timer);
     }, 4500);
 }

@@ -160,10 +160,11 @@ table {
     font-size: 0.7rem;
     left: 50%;
     letter-spacing: 0.06rem;
+    opacity: 0;
     padding: 0.8rem 1.25rem;
     position: fixed;
     transform: translateX(-50%);
-    transition: transform 0.45s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     visibility: hidden;
     z-index: 60;
 }
