@@ -123,6 +123,13 @@ table {
     text-transform: uppercase;
 }
 
+    .button-fill.halved {
+        height: 1rem;
+        padding: 0.8rem;
+        text-transform: lowercase;
+        width: 100%;
+    }
+
     .button-fill:hover {
         filter: brightness(1.08);
     }
@@ -140,9 +147,24 @@ table {
     text-transform: uppercase;
 }
 
+    .button-hollow.halved {
+        height: 1rem;
+        padding: 0.8rem;
+        text-transform: lowercase;
+        width: 100%;
+    }
+
     .button-hollow:hover {
         filter: brightness(1.08);
     }
+
+.button-stacked {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
 
 .chart-modifier {
     width: 40rem;
