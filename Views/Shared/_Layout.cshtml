@@ -20,8 +20,8 @@
         showScriptIdeogram: $persist(false).using(sessionStorage),
         strokeCount: $persist(0).using(sessionStorage),
         pageJump: $persist(1).using(sessionStorage),
-        setStrokes() { fetch(`/Home/Strokes?strokes=${this.strokeCount}`) },
-        setJump() { fetch(`/Home/JumpPage?page=${this.pageJump}`) },
+        async setStrokes() { await fetch(`/Home/Strokes?strokes=${this.strokeCount}`) },
+        async setJump() { await fetch(`/Home/JumpPage?page=${this.pageJump}`) },
         path: null,
         async exportPage() {
             this.showExport = false;
